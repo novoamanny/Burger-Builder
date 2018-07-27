@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import classes from '.BurgerIngridient.css';
+import classes from './BurgerIngridient.css';
 
 class BurgerIngridient extends Component{
 
@@ -16,8 +16,8 @@ class BurgerIngridient extends Component{
             case ('bread-top'):
                 ingridient = (
                     <div className={classes.BreadTop}>
-                        <div className={classes.Seed1}></div>
-                        <div className={classes.Seed2}></div>
+                        <div className={classes.Seeds1}></div>
+                        <div className={classes.Seeds2}></div>
                     </div>
                 );
                 break;
