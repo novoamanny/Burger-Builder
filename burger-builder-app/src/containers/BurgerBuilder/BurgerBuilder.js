@@ -3,6 +3,7 @@ import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
+// Ingredient Prices
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -10,6 +11,7 @@ const INGREDIENT_PRICES = {
     bacon: 0.7
 }
 
+// Burger Builder Component
 class BurgerBuilder extends Component{
     state = {
         ingredients:{
@@ -22,6 +24,7 @@ class BurgerBuilder extends Component{
         purchasable: false
     }
 
+    // Update Purchase state
     updatePurchaseState(ingredients){
         // array of values
         const sum = Object.keys(ingredients)
@@ -35,6 +38,7 @@ class BurgerBuilder extends Component{
         this.setState({purchasable: sum > 0});
     }
 
+    // Add ingredients
     addIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         const newCount = oldCount + 1;
@@ -53,6 +57,7 @@ class BurgerBuilder extends Component{
 
     }
 
+    // remove Ingredients
     removeIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         if(oldCount <= 0){
@@ -73,6 +78,7 @@ class BurgerBuilder extends Component{
         this.updatePurchaseState(updatedIngredients);
     }
 
+    // Render
     render (){
         const disabledInfo = {
             ...this.state.ingredients

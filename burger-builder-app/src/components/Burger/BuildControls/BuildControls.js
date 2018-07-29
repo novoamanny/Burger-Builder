@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
 
+// Control Types
 const controls = [
     {
         label: 'Salad',
@@ -35,6 +36,8 @@ const buildControls = (props) => (
                 removed={() => props.ingredientRemoved(ctrl.type)}
                 disabled={props.disabled[ctrl.type]}/>
         ))}
+
+        {/* Order Now Button */}
         <button 
             className={classes.OrderButton}
             disabled={!props.purchasable}>ORDER NOW</button>
